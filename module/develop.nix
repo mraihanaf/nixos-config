@@ -7,5 +7,6 @@
     clang
     nodejs
     pnpm
+    gh
   ];
 }
