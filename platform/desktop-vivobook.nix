@@ -42,6 +42,7 @@
     settings = {
       START_CHARGE_THRESH_BAT0 = 60;
       STOP_CHARGE_THRESH_BAT0 = 95;
+      DEVICES_TO_DISABLE_ON_STARTUP="bluetooth";
     };
   };
 }
