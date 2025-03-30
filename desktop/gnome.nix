@@ -23,7 +23,7 @@
   programs.gnome-terminal.enable = false;
   
   environment.shellAliases = {
-    ssh = "kitty ssh";
+    ssh = "kitten ssh";
   };
 
   programs.dconf.enable = true;
