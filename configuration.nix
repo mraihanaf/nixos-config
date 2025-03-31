@@ -10,6 +10,7 @@
     ./module/browser.nix
     ./module/develop.nix
     ./module/docker.nix
+    ./module/wacom.nix
   ];
 
   # Bootloader
