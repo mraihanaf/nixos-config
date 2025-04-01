@@ -34,6 +34,6 @@
   fonts.packages = with pkgs; [
     fira-code-nerdfont
     fira-code-symbols
-    adwaita-fonts
+    adwaita
   ];
 }
