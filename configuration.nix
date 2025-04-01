@@ -11,6 +11,7 @@
     ./module/develop.nix
     ./module/docker.nix
     ./module/wacom.nix
+    ./module/daily-driver.nix
   ];
 
   # Bootloader

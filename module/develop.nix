@@ -8,5 +8,7 @@
     nodejs
     pnpm
     gh
+    python312Packages.pip
+    thonny
   ];
 }
