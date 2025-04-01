@@ -4,5 +4,6 @@
     wget
     git
     neofetch
+    busybox
   ];
 }
