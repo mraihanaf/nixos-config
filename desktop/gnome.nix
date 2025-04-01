@@ -12,6 +12,7 @@
     home-manager
     kitty
     zsh
+    gnome-tweaks
   ];
 
   services.flatpak.enable = true;
