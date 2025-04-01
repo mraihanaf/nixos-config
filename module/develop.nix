@@ -10,5 +10,6 @@
     gh
     python312Packages.pip
     thonny
-  ];
+    pipenv
+ ];
 }
