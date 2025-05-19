@@ -10,7 +10,7 @@
   };
 
   services.printing.enable = true;
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
 
   services.pipewire = {
@@ -23,7 +23,7 @@
   users.users.rai = {
     isNormalUser = true;
     description = "Raihan";
-    extraGroups = ["networkmanager" "wheel" "docker"];
+    extraGroups = ["networkmanager" "wheel" "docker" "dialout"];
     packages = with pkgs; [
 
     ];

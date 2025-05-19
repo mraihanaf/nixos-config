@@ -9,7 +9,13 @@
     pnpm
     gh
     python312Packages.pip
-    thonny
+    (python311.withPackages(ps: with ps; [ esptool pyserial ]))
     pipenv
+    git-lfs
+    fritzing
+    code-cursor
  ];
+
+  programs.nix-ld.enable = true;
+
 }

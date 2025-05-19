@@ -32,8 +32,29 @@
   users.defaultUserShell = pkgs.zsh;
 
   fonts.packages = with pkgs; [
-    fira-code-nerdfont
+    nerd-fonts.fira-code
     fira-code-symbols
-    adwaita
+    adwaita-fonts
   ];
+
+  # Better font rendering 
+
+  # This from https://www.reddit.com/r/linuxquestions/comments/owm43p/thicker_font_rendering_osxlike_is_it_possible/
+  environment.variables = {
+    FREETYPE_PROPERTIES = "truetype:interpreter-version=35 autofitter:no-stem-darkening=0";
+  };
+
+  # This one from chat gpt
+  fonts.fontconfig = {
+    enable = true;
+    antialias = true;  # Enable anti-aliasing
+    hinting = {
+      enable = true;   # Enable font hinting
+      style  = "full"; # Set hinting style to 'full'
+      autohint = true;   # Enable autohinting
+    };
+    subpixel = {
+      rgba = "rgb";
+    };
+  };
 }
