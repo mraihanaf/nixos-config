@@ -1,8 +1,14 @@
 {config, pkgs, lib, ...}:
 {
+  # services.xserver.displayManager.gdm = {
+  #   autoLogin.user = "soni";
+  # };
+
   services.xserver = {
     enable = true;
+    # displayManager.sddm.enable = true;
     displayManager.gdm.enable = true;
+    displayManager.gdm.wayland = true;
     desktopManager.gnome.enable = true;
   };
 
@@ -17,11 +23,7 @@
 
   services.flatpak.enable = true;
 
-  environment.gnome.excludePackages = with pkgs; [
-    gnome-console
-  ];
-
-  programs.gnome-terminal.enable = false;
+  programs.gnome-terminal.enable = true;
   
   environment.shellAliases = {
     ssh = "kitten ssh";
@@ -45,16 +47,16 @@
   };
 
   # This one from chat gpt
-  fonts.fontconfig = {
-    enable = true;
-    antialias = true;  # Enable anti-aliasing
-    hinting = {
-      enable = true;   # Enable font hinting
-      style  = "full"; # Set hinting style to 'full'
-      autohint = true;   # Enable autohinting
-    };
-    subpixel = {
-      rgba = "rgb";
-    };
-  };
+  #fonts.fontconfig = {
+  #  enable = true;
+  #  antialias = true;  # Enable anti-aliasing
+  #  hinting = {
+  #    enable = true;   # Enable font hinting
+  #    style  = "full"; # Set hinting style to 'full'
+  #    autohint = true;   # Enable autohinting
+  #  };
+  #  subpixel = {
+  #    rgba = "rgb";
+  #  };
+  # };
 }

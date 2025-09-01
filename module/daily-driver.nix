@@ -1,32 +1,44 @@
 { config, pkgs, ...}:
 {
-  
   environment.interactiveShellInit = ''
   alias gs='git status'
   alias n='nvim'
   alias k='kubectl'
+  alias t='terraform'
+  alias d='docker'
+  alias gp='sudo git push'
+  alias rs="sudo nixos-rebuild switch"
+  alias rb="sudo nixos-rebuild boot"
+  fastfetch --logo ~/.config/Wallpapers/minjicrop.png
   '';
-
-  environment.variables = {
-    "TMPDIR" = "$(echo $HOME)/.terraform_tmp";
-  };
-
+ 
   environment.systemPackages = with pkgs; [
     rnote
     libreoffice
     gimp
-    davinci-resolve
+    steam-devices-udev-rules
+    steam
+    bluetui
+    ventoy-full
+    ventoy-full-qt
+    firefoxpwa
+    distrobox
+    woeusb
+    spicetify-cli
+    micro
+    android-tools
+    android-studio-tools
+    android-studio-full
+    androidenv.androidPkgs.ndk-bundle
     obs-studio
     pavucontrol
     pulseaudio
-    android-tools
+    avrdude
     pulseaudioFull
-    terraform
-    kubernetes
-    minikube
-    envsubst
-    awscli2
+    gettext
     zip
+    avrdude
+    code-cursor
     anydesk
       (pkgs.wrapOBS {
     plugins = with pkgs.obs-studio-plugins; [
@@ -37,6 +49,7 @@
     ];
   })
   ];
+
 
   boot.extraModulePackages = with config.boot.kernelPackages; [
     v4l2loopback

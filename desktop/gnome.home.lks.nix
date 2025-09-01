@@ -8,10 +8,16 @@ in
       (import "${home-manager}/nixos")
     ];
 
+  users.users.soni = {
+    isNormaluser = true;
+    home = "/home/soni";
+    extragroups = ["wheel" "networkmanager"]
+  }
+
   home-manager.backupFileExtension = "backup";  
-  home-manager.users.rai = { pkgs, ... }: {
-    home.username = "rai";
-    home.homeDirectory = "/home/rai";
+  home-manager.users.soni = { pkgs, ... }: {
+    home.username = "soni";
+    home.homeDirectory = "/home/soni";
     home.packages = [ pkgs.atool pkgs.httpie ];
     programs.bash.enable = true;
     programs.home-manager.enable = true;
@@ -44,14 +50,12 @@ in
     programs.kitty = {
       enable = true;
       settings = {
-        background_opacity = 0.35;
-        hide_window_decorations = false;
-        linux_display_server = "wayland";
+        background_opacity = 0.5;
+        hide_window_decorations = true;
+        linux_display_server = "x11";
         font_family = "FiraCode";
-        window_border_width = 0;
       };
     };
-
     # The state version is required and should stay at the version you
     # originally installed.
     home.stateVersion = "24.11";
